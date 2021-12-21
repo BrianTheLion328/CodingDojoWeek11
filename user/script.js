@@ -17,9 +17,9 @@ class User {
       console.log(`Name: ${this.name}, Account Balance: $${this.accountBalance}`);
     }
 
-    transferMoney(user1, user2, amount) {
-        user1.accountBalance -= amount;
-        user2.accountBalance += amount;
+    transferMoney(user, amount) {
+        this.accountBalance -= amount;
+        user.accountBalance += amount;
     }
   }
 
@@ -52,7 +52,7 @@ class User {
   console.log("Zack's balance: ", zack.accountBalance)
 
   // transfer money
-  brian.transferMoney(brian, zack, 100);
+  brian.transferMoney(zack, 100);
 
   console.log(brian.accountBalance)
   console.log(zack.accountBalance)
