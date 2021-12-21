@@ -1,3 +1,5 @@
+// USER CLASS CODE
+
 class User {
     constructor(name, email) {
       this.name = name;
@@ -59,7 +61,42 @@ class User {
   brian.displayBalance();
   zack.displayBalance();
 
-  console.log("Brian's chanining activity: ")
+  console.log("Brian's chaining activity: ")
 
   brian.makeDeposit(200).makeDeposit(170)
-  .makeDeposit(85).makeWithdrawal(225).displayBalance()
+  .makeDeposit(95).makeWithdrawal(225).displayBalance()
+
+// BANK ACCOUNT CLASS
+class BankAccount {
+    constructor(interestRate, balance) {
+        this.interestRate = interestRate;
+        this.balance = balance;
+    }
+    deposit(amount) {
+        this.balance += amount;
+        return this;
+    }
+    withdraw(amount) {
+        this.balance -= amount;
+        if (this.balance < 0) {
+            console.log("Insufficient funds: Charging $5 fee");
+            this.balance -= 5;
+        }
+        return this;
+    }
+    displayAccountInfo() {
+        console.log(
+            `Current Balance: $${this.balance}, Interest Rate: ${this.interestRate}`
+        );
+        return this;
+    }
+    yieldInterest() {
+        this.balance += this.balance * this.interestRate;
+        return this;
+    }
+}
+
+const bank = new BankAccount();
+const bank2 = new BankAccount(0.06, 200);
+bank2.withdraw(500)
+bank2.displayAccountInfo()
