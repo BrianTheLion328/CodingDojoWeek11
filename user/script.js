@@ -7,19 +7,23 @@ class User {
 
     makeDeposit(amount) {
       this.accountBalance += amount;
+      return this;
     }
 
     makeWithdrawal(amount) {
       this.accountBalance -= amount;
+      return this;
     }
 
     displayBalance() {
       console.log(`Name: ${this.name}, Account Balance: $${this.accountBalance}`);
+      return this;
     }
 
     transferMoney(user, amount) {
         this.accountBalance -= amount;
         user.accountBalance += amount;
+        return this;
     }
   }
 
@@ -54,3 +58,8 @@ class User {
   // Brian and Zack's totals after successful transfer
   brian.displayBalance();
   zack.displayBalance();
+
+  console.log("Brian's chanining activity: ")
+
+  brian.makeDeposit(200).makeDeposit(170)
+  .makeDeposit(85).makeWithdrawal(225).displayBalance()
