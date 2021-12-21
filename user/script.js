@@ -9,7 +9,7 @@ class User {
       this.accountBalance += amount;
     }
 
-    makeWithdrawl(amount) {
+    makeWithdrawal(amount) {
       this.accountBalance -= amount;
     }
 
@@ -23,36 +23,34 @@ class User {
     }
   }
 
-  const brian = new User("Brian Moniz", "bmoniz328@gmail.com");
-  const patrick = new User("Patrick Moniz", "pmoniz@123fakecompany.com");
-  const zack = new User("Zack Herrington", "zherrington@gmail.com")
+  const brian = new User("Brian", "bmoniz328@gmail.com");
+  const patrick = new User("Patrick", "pmoniz@123fakecompany.com");
+  const zack = new User("Zack", "zherrington@gmail.com")
 
 // Brian's account activity
   brian.makeDeposit(200);
   brian.makeDeposit(150);
   brian.makeDeposit(85);
-  brian.makeWithdrawl(225);
-
-  console.log("Brian's balance: ", brian.accountBalance)
+  brian.makeWithdrawal(225);
+  brian.displayBalance()
 
 // Patrick's account activity
   patrick.makeDeposit(130);
   patrick.makeDeposit(450);
-  patrick.makeWithdrawl(75);
-  patrick.makeWithdrawl(50);
-
-  console.log("Patrick's balance: ", patrick.accountBalance)
+  patrick.makeWithdrawal(75);
+  patrick.makeWithdrawal(50);
+  patrick.displayBalance();
 
 // Zack's account activity
   zack.makeDeposit(300);
-  zack.makeWithdrawl(100);
-  zack.makeWithdrawl(40);
-  zack.makeWithdrawl(110);
-
-  console.log("Zack's balance: ", zack.accountBalance)
+  zack.makeWithdrawal(100);
+  zack.makeWithdrawal(40);
+  zack.makeWithdrawal(110);
+  zack.displayBalance();
 
   // transfer money
   brian.transferMoney(zack, 100);
 
-  console.log(brian.accountBalance)
-  console.log(zack.accountBalance)
+  // Brian and Zack's totals after successful transfer
+  brian.displayBalance();
+  zack.displayBalance();
