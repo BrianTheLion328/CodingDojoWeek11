@@ -96,7 +96,7 @@ class BankAccount {
     }
 }
 
-const bank = new BankAccount();
+const bank1 = new BankAccount();
 const bank2 = new BankAccount(0.06, 200);
-bank2.withdraw(500)
-bank2.displayAccountInfo()
+bank2.withdraw(500);
+bank2.displayAccountInfo(); 
