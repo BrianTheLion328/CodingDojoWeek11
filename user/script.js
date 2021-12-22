@@ -136,9 +136,13 @@ class User {
 
 const alex = new User("Alex Smith", "Asmith123@gmail.com");
 
+alex.account.deposit(500)
+alex.account.deposit(4250) // payday!
+alex.account.withdraw(1250) // pay rent :(
+alex.account.displayAccountInfo()
+
 console.log("New User Alex:", alex)
 
-alex.account.deposit(500)
 
 // Note: Remember now that you must use
 // this.account, like so: brian.account.deposit(250)
