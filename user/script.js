@@ -139,3 +139,6 @@ const alex = new User("Alex Smith", "Asmith123@gmail.com");
 console.log("New User Alex:", alex)
 
 alex.account.deposit(500)
+
+// Note: Remember now that you must use
+// this.account, like so: brian.account.deposit(250)
