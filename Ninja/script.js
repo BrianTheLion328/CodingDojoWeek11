@@ -23,3 +23,20 @@ console.log("Ninja Brian: ", brian)
 brian.drinkSake()
 
 console.log("Brian after sake:", brian)
+
+class Sensei extends Ninja {
+    constructor(name, health = 200, speed = 10, strength = 10, wisdom = 10) {
+        super(name, health, speed, strength);
+            this.wisdom = wisdom;
+    }
+    speakWisdom() {
+        this.drinkSake()
+        const message = "If your parents didn't have kids, you probably won't either."
+        console.log(message)
+    }
+}
+
+const senseiBrian = new Sensei("Master Brian")
+
+console.log("Sensei Brian's info: ", senseiBrian)
+senseiBrian.speakWisdom()
